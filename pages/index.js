@@ -1,82 +1,75 @@
-import Head from 'next/head'
+import Link from 'next/link'
+
+import Layout from '../components/layout/Layout'
+import CoolFacts from '../components/CoolFacts'
+import Slideshow from '../components/Slideshow'
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <Layout
+      title='Afghanistan Business Referral - ABR'
+      canonical='https://abr.af/'
+      descriptionContent='Afghanistan Business Referrals (ABR) is a multi-disciplinary professional services network that provides legal, accountancy, financial advice to companies and individuals in the jurisdiction of Afghanistan.'
+      active='home'
+    >
+      <Slideshow />
+      <section className='py-16 lg:py-24 px-0 md:px-4 lg:px-32 mx-4 font-openSans'>
+        <div className='text-center'>
+          <h2 className='py-4 mb-8 capitalize flex flex-col font-notoSerif'>
+            <span className='text-xl md:text-2xl mb-2'>Afghanistan Business Referrals</span>
+          </h2>
         </div>
-      </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
-    </div>
+        <hr />
+        <div className='flex flex-col md:flex-row mt-14'>
+          <div className='flex-3 p-0 lg:pr-14'>
+            <h2 className='text-base md:text-xl font-semibold capitalize'>about ABR</h2>
+            <h1 className='p-0 py-4 text-sm md:text-medium lg:text-base xl:text-lg'>
+              Afghanistan Business Referrals (ABR) is a multi-disciplinary professional services
+              network that provides legal, accountancy, financial advice to companies and
+              individuals in the jurisdiction of Afghanistan.
+            </h1>
+            <p className='p-0 py-4 text-sm md:text-medium lg:text-base xl:text-lg'>
+              ABR is introducing the most skilled lawyers, advisors and professionals from all parts
+              of Afghanistan. ABR is the next generation for finding a specialist lawyer and
+              professional for your business requirements in Afghanistan.
+            </p>
+          </div>
+          <div className='flex-1'>
+            <div className='p-0 py-4 text-sm md:text-medium lg:text-base xl:text-lg'>
+              Need an advisor? <br /> There’s ...
+            </div>
+            <Link href='/advisors/'>
+              <button className='bg-primary px-4 py-2 my-4 text-white'>Find an Advisor</button>
+            </Link>
+          </div>
+        </div>
+      </section>
+      <CoolFacts />
+      <section className='relative pb-14 mx-4 md:px-6 py-6 md:py-14 md:my-8 font-openSans'>
+        <div className='flex flex-col md:flex-row p-0 md:p-4'>
+          <div className='lg:py-12 lg:px-44 lg:text-center'>
+            <div className='text-sm uppercase tracking-widest text-primary'>Our Membership</div>
+            <h2 className='py-4 mb-4 text-2xl capitalize font-bold relative small-line__center'>
+              why join ABR?
+            </h2>
+            <div className='py-6'>
+              <p className='text-sm md:text-medium lg:text-base xl:text-lg'>
+                ABR works with and assists leading professional services firms with the growth of
+                their practice. Members share referrals, development opportunities and are able to
+                receive global exposure for their offered services. The structure ensures each
+                member holds exclusivity for their area of expertise and jurisdiction. Ensuring
+                maximum exposure and opportunity for new businesses.
+              </p>
+            </div>
+            <div className='pt-4'>
+              <button className='border-none text-primary border-b border-solid group border-current inline-block bg-transparent pointer pb-0.5 custom-transition hover:text-grey_dark_1'>
+                <Link href='/membership/'>Read More</Link>
+                <span className='ml-1 custom-transition group-hover:ml-2'>&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </Layout>
   )
 }
